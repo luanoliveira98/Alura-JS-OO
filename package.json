@@ -1,0 +1,21 @@
+{
+  "name": "bytebank",
+  "version": "1.0.0",
+  "description": "Bytebank project from its customers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luanoliveira98/JS-OO.git"
+  },
+  "author": "Luan Oliveira",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/luanoliveira98/JS-OO/issues"
+  },
+  "homepage": "https://github.com/luanoliveira98/JS-OO#readme"
+}

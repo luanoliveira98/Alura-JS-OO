@@ -1,25 +1,5 @@
-class Customer {
-    name;
-    cpf;
-}
-
-class CheckingAccount {
-    agency;
-    // #balance = 0 https://github.com/tc39/proposal-class-fields#private-fields
-    _balance = 0;
-
-    deposit(value) {
-        if (value <= 0) return;
-        this._balance += value;
-        return value;
-    }
-
-    withdraw(value) {
-        if (this._balance < value || value <= 0) return;
-        this._balance -= value;
-        return value;
-    }
-}
+import {Customer} from './Customer.js';
+import {CheckingAccount} from './CheckingAccount.js';
 
 const customer1 = new Customer();
 customer1.name = "Luan";
@@ -29,11 +9,16 @@ const customer2 = new Customer();
 customer2.name = "Alice";
 customer2.cpf = 88822233309;
 
-const checkingAccountLuan = new CheckingAccount();
-checkingAccountLuan.agency = 1001;
+const account1 = new CheckingAccount();
+account1.agency = 1001;
+account1.customer = customer1;
+account1.deposit(500);
 
-checkingAccountLuan.deposit(200);
-let withdrawnValue = checkingAccountLuan.withdraw(50);
-console.log(withdrawnValue);
+const account2 = new CheckingAccount();
+account2.agency = 1001;
+account2.customer = customer2;
 
-console.log(checkingAccountLuan);
+account1.transfer(200, account2);
+
+console.log(account1);
+console.log(account2);
